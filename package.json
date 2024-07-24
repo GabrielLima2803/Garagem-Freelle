@@ -11,6 +11,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "axios": "^1.7.2",
+    "material-design-icons": "^3.0.1",
     "pinia": "^2.1.7",
     "vite-plugin-pwa": "^0.20.0",
     "vue": "^3.4.29",
