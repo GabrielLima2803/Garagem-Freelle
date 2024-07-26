@@ -1,20 +1,54 @@
-import axios from "axios";
+import { defineStore } from 'pinia'
+import { computed, reactive } from 'vue'
+import AcessorioService from '@/services/acessorios.js'
 
-export default class AcessorioService {
-  async buscarTodosAcessorios() {
-    const { data } = await axios.get("/acessorios/");
-    return data.results;
+const acessorioService = new AcessorioService()
+
+export const useAcessorioStore = defineStore('acessorios', () => {
+  const state = reactive({
+    acessorios: []
+  })
+
+  const acessorios = computed(() => state.acessorios)
+
+  const getAllAcessorios = async () => {
+    try {
+      const data = await acessorioService.buscarTodosAcessorios() 
+      state.acessorios = data
+    } catch (error) {
+      console.error('Failed to fetch acessorios:', error)
+    }
   }
-  async adicionarAcessorio(acessorio) {
-    const { data } = await axios.post("/acessorios/", acessorio);
-    return data.results;
+
+  const createAcessorio = async (acessorioData) => {
+    try {
+      const data = await acessorioService.adicionarAcessorio(acessorioData)
+      state.acessorios.push(data)
+    } catch (error) {
+      console.error('Failed to create acessorio:', error)
+    }
   }
-  async atualizarAcessorio(acessorio) {
-    const { data } = await axios.put(`/acessorios/${acessorio.id}/`, acessorio);
-    return data.results;
+
+  const deleteAcessorio = async (id) => {
+    try {
+      await acessorioService.excluirAcessorio(id)
+      state.acessorios = state.acessorios.filter((acessorio) => acessorio.id !== id)
+    } catch (error) {
+      console.error('Failed to delete acessorio:', error)
+    }
   }
-  async excluirAcessorio(id) {
-    const { data } = await axios.delete(`/acessorios/${id}/`);
-    return data.results;
+
+  const updateAcessorio = async (id, acessorioData) => {
+    try {
+      const updatedAcessorio = await acessorioService.atualizarAcessorio({ id, ...acessorioData })
+      const index = state.acessorios.findIndex((acessorio) => acessorio.id === id)
+      if (index !== -1) {
+        state.acessorios[index] = updatedAcessorio
+      }
+    } catch (error) {
+      console.error('Failed to update acessorio:', error)
+    }
   }
-}
+
+  return { acessorios, getAllAcessorios, createAcessorio, deleteAcessorio, updateAcessorio }
+})
