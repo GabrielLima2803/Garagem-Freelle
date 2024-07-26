@@ -3,6 +3,9 @@
 <template>
   <div class="icons">
     <i class="mdi mdi-magnify" />
+    <router-link to="/login">
+        <i class="icon mdi mdi-account" /> 
+      </router-link>
   </div>
 </template>
 
