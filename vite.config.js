@@ -14,9 +14,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
-        name: 'Fake Store',
-        short_name: 'FakeStore',
-        description: 'Fake Store: Fantástica loja de produtos',
+        name: 'Garagem Freelle',
+        short_name: 'Freelle',
+        description: 'Garagem Freelle: Fantastica loja de carros',
         theme_color: '#ffffff',
         icons: [
           {
@@ -32,7 +32,7 @@ export default defineConfig({
             purpose: 'maskable',
           },
         ],
-        id: 'com.fake-store.app',
+        id: 'com.Garagem-Freelle.app',
         orientation: 'any',
         background_color: '#ffffff',
         start_url: '.',
