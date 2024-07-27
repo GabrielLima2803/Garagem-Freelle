@@ -1,12 +1,18 @@
-import axios from "axios";
+import api from '@/plugins/axios';
 
 export default class AuthService {
   async postUserToken(token) {
-    const response = await axios.get("/usuarios/me/", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    return response.data;
+    try {
+      const response = await api.get("/usuarios/me/", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log('API response:', response); 
+      return response.data;
+    } catch (error) {
+      console.error('API request error:', error); 
+      throw error;
+    }
   }
 }
