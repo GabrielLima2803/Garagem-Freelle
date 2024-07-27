@@ -1,6 +1,6 @@
 <script setup>
-  import MediumHeader from '@/components/templates/medium/MediumHeader.vue';
-  import MediumFooter from '@/components/templates/medium/MediumFooter.vue';
+import MediumHeader from '@/components/templates/medium/MediumHeader.vue';
+import MediumFooter from '@/components/templates/medium/MediumFooter.vue';
 </script>
 
 <template>
@@ -16,10 +16,11 @@
     </footer>
   </div>
 </template>
+
 <style scoped>
 #layout-medium {
   display: grid;
-  grid-template-columns: 1fr 6fr;
+  grid-template-columns: 0.3fr 5.5fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     'aside header'
@@ -30,10 +31,11 @@
 
 header {
   display: flex;
-  widows: 100vw;
-  justify-content: flex-end;
-  padding: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.5rem;
   grid-area: header;
+  width: 100%;
 }
 
 main {
@@ -44,10 +46,10 @@ main {
 
 footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3rem;
-  background-color: #eeeeee;
+  justify-content: center; 
+  align-items: center; 
+  padding: 1.5rem;
   grid-area: footer;
+  width: 100%; 
 }
 </style>

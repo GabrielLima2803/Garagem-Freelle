@@ -54,7 +54,6 @@ onMounted(async () => {
 
 <template>
   <h1>Marca</h1>
-  <hr />
   <div class="form">
     <input type="text" v-model="marca.nome" placeholder="Nome" />
     <input type="text" v-model="marca.nacionalidade" placeholder="Nacionalidade" />
@@ -63,7 +62,6 @@ onMounted(async () => {
       <button @click="limpar">Limpar</button>
     </div>
   </div>
-  <hr />
   <ul>
     <li v-for="marcaItem in marcas" :key="marcaItem.id">
       <span @click="editar(marcaItem)">
@@ -78,6 +76,7 @@ onMounted(async () => {
 h1 {
   text-align: center;
   margin-bottom: 20px;
+  padding: 20px;
   color: #333;
 }
 

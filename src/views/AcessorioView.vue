@@ -54,7 +54,6 @@ onMounted(async () => {
 
 <template>
   <h1>Acessório</h1>
-  <hr />
   <div class="form">
     <input type="text" v-model="acessorio.descricao" placeholder="Descrição" />
     <div class="form-buttons">
@@ -62,7 +61,6 @@ onMounted(async () => {
       <button @click="limpar">Limpar</button>
     </div>
   </div>
-  <hr />
   <ul>
     <li v-for="acessorioItem in acessorios" :key="acessorioItem.id">
       <span @click="editar(acessorioItem)">
@@ -78,6 +76,7 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
+  padding: 20px;
 }
 
 .gap {

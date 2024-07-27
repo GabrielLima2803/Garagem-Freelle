@@ -53,8 +53,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <h1>Cor</h1>
-  <hr />
+  <h1>Cores</h1>
   <div class="form">
     <input type="text" v-model="cor.nome" placeholder="Nome" />
     <div class="form-buttons">
@@ -62,7 +61,6 @@ onMounted(async () => {
       <button @click="limpar">Limpar</button>
     </div>
   </div>
-  <hr />
   <ul>
     <li v-for="corItem in cores" :key="corItem.id">
       <span @click="editar(corItem)">
@@ -78,6 +76,7 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
+  padding: 20px;
 }
 
 .gap {

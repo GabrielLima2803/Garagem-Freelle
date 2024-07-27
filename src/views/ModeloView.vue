@@ -64,8 +64,7 @@ onMounted(async () => {
 
 <template>
   <h1>Modelo</h1>
-  <hr />
-  <div class="form">
+    <div class="form">
     <input type="text" v-model="modelo.nome" placeholder="Nome" />
     <select v-model="modelo.marca">
       <option value="" disabled>Selecione uma marca</option>
@@ -84,7 +83,6 @@ onMounted(async () => {
       <button @click="limpar">Limpar</button>
     </div>
   </div>
-  <hr />
   <ul>
     <li v-for="modeloItem in modelos" :key="modeloItem.id">
       <span @click="editar(modeloItem)">
@@ -103,6 +101,7 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
+  padding: 20px;
 }
 .gap {
   margin-right: 10px;

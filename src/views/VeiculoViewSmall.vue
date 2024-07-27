@@ -70,38 +70,34 @@ onMounted(async () => {
 <template>
   <h1>Veículos</h1>
   <div class="form">
-    <div class="form-row">
-      <div class="form-group">
-        <label for="modelo">Modelo:</label>
-        <select v-model="veiculo.modelo" required>
-          <option value="" disabled>Selecione um modelo</option>
-          <option v-for="modelo in modelos" :key="modelo.id" :value="modelo.id">
-            {{ modelo.nome }}
-          </option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="cor">Cor:</label>
-        <select v-model="veiculo.cor" required>
-          <option value="" disabled>Selecione uma cor</option>
-          <option v-for="cor in cores" :key="cor.id" :value="cor.id">
-            {{ cor.nome }}
-          </option>
-        </select>
-      </div>
+    <div class="form-group">
+      <label for="modelo">Modelo:</label>
+      <select v-model="veiculo.modelo" required>
+        <option value="" disabled>Selecione um modelo</option>
+        <option v-for="modelo in modelos" :key="modelo.id" :value="modelo.id">
+          {{ modelo.nome }}
+        </option>
+      </select>
     </div>
 
-    <div class="form-row">
-      <div class="form-group">
-        <label for="ano">Ano:</label>
-        <input type="number" v-model="veiculo.ano" required />
-      </div>
+    <div class="form-group">
+      <label for="cor">Cor:</label>
+      <select v-model="veiculo.cor" required>
+        <option value="" disabled>Selecione uma cor</option>
+        <option v-for="cor in cores" :key="cor.id" :value="cor.id">
+          {{ cor.nome }}
+        </option>
+      </select>
+    </div>
 
-      <div class="form-group">
-        <label for="preco">Preço:</label>
-        <input type="number" v-model="veiculo.preco" step="0.01" required />
-      </div>
+    <div class="form-group">
+      <label for="ano">Ano:</label>
+      <input type="number" v-model="veiculo.ano" required />
+    </div>
+
+    <div class="form-group">
+      <label for="preco">Preço:</label>
+      <input type="number" v-model="veiculo.preco" step="0.01" required />
     </div>
 
     <div class="form-group">
@@ -114,7 +110,7 @@ onMounted(async () => {
     </div>
 
     <div class="form-buttons">
-      <button @click="salvar" class="gap">Salvar</button>
+      <button @click="salvar">Salvar</button>
       <button @click="limpar">Limpar</button>
     </div>
   </div>
@@ -138,67 +134,60 @@ h1 {
   padding: 20px;
 }
 
-.gap {
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
 .form {
-  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.form-row {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
   max-width: 800px;
+  margin: 0 auto;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  margin-right: 10px;
+  margin-bottom: 1rem;
 }
 
-.form-group:last-child {
-  margin-right: 0;
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
-.form input, select {
+.form input,
+.form select {
+  width: 100%;
   padding: 12px 15px;
-  margin-bottom: 12px;
   border: 1px solid #bbb;
-  transition: border-color 0.3s, box-shadow 0.3s;
   background-color: #f9f9f9;
   color: #333;
   font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.form input:focus, select:focus {
+.form input:focus,
+.form select:focus {
   border-color: #888;
   box-shadow: 0 0 5px rgba(136, 136, 136, 0.5);
   outline: none;
 }
 
-.form input::placeholder, select::placeholder {
+.form input::placeholder,
+.form select::placeholder {
   color: #aaa;
 }
 
-.acessorios{
-  width: 150px;
-  height: 50px;
+.acessorios {
+  height: 100px; /* Ajusta a altura conforme necessário */
 }
 
 .form-buttons {
   display: flex;
+  justify-content: center;
   gap: 10px;
+  margin-top: 1rem;
 }
 
-.form button {
+.form-buttons button {
   width: 100px;
   height: 40px;
   background-color: #888;
@@ -208,10 +197,9 @@ h1 {
   transition: background-color 0.3s;
 }
 
-.form button:hover {
+.form-buttons button:hover {
   background-color: #3c3c3c;
 }
-
 
 ul {
   list-style: none;
