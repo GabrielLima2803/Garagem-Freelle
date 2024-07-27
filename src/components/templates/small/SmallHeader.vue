@@ -20,4 +20,8 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
   align-items: center;
   font-size: 1.7rem;
 }
+
+i:hover{
+  color: #333;
+}
 </style>

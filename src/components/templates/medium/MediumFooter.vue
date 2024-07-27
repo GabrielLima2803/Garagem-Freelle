@@ -1,36 +1,64 @@
 <script setup></script>
 <template>
-  <div class="links">
-    <RouterLink to="/">Help</RouterLink>
-    <RouterLink to="/">Contact Us</RouterLink>
-    <RouterLink to="/">Privacy & Terms</RouterLink>
-  </div>
-  <div class="icons">
-    <i class="mdi mdi-facebook" />
-    <i class="mdi mdi-twitter" />
-    <i class="mdi mdi-instagram" />
-  </div>
+  <footer class="footer">
+    <div class="top-section">
+      <div class="links">
+        <h6>Garagem Freelle</h6>
+      </div>
+      <div class="icons">
+        <i class="mdi mdi-facebook" />
+        <i class="mdi mdi-twitter" />
+        <i class="mdi mdi-instagram" />
+      </div>
+    </div>
+    <hr />
+    <div class="copyright">
+      <h6>© 2024 FREELLE ©Copyright 2024 FREELLE.</h6>
+    </div>
+  </footer>
 </template>
+
 <style scoped>
-.links {
-  width: 100%;
-  justify-content: center;
+.footer {
   display: flex;
-  gap: 4rem;
-  font-size: 1.2rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  background-color: #fff; /* Fundo branco */
+  width: 100%;
+  position: relative;
 }
 
-.links a {
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 3rem;
+}
+
+.links {
+  font-size: 1.2rem;
   color: #000;
-  text-decoration: none;
-  transition: color 0.3s;
 }
 
 .icons {
-  padding-right: 3rem;
   display: flex;
-  gap: 4rem;
-  align-items: center;
-  font-size: 2.2rem;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+}
+
+hr {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #000;
+  margin: 1rem 0;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  width: 100%;
+  padding-bottom: 1rem;
 }
 </style>

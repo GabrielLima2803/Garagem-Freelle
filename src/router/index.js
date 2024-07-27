@@ -7,13 +7,14 @@ import MarcaView from "../views/MarcaView.vue";
 import AcessorioView from "../views/AcessorioView.vue";
 import ModeloView from "../views/ModeloView.vue";
 import VeiculoView from "../views/VeiculoView.vue";
+import VeiculoViewSmall from "../views/VeiculoViewSmall.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: '',
+      name: 'home',
       component: LayoutFull,
       children: [
         {
@@ -55,6 +56,11 @@ const router = createRouter({
           path: "/veiculos",
           name: "veiculos",
           component: VeiculoView
+        },
+        {
+          path: "/veiculosSmall",
+          name: "veiculosSmall",
+          component: VeiculoViewSmall
         },
       ],
     },

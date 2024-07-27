@@ -17,36 +17,33 @@
 </template>
 <style scoped>
 #layout-large {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas:
-    'aside header'
-    'aside main'
-    'aside footer';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   min-height: 100vh;
+  width: 100%;
 }
 
 header {
   display: flex;
-  widows: 100vw;
-  justify-content: flex-end;
-  padding: 1.5rem;
-  grid-area: header;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.5rem; 
+  width: 100%;
 }
 
 main {
-  min-height: 80%;
-  padding: 2rem;
-  grid-area: main;
+  flex-grow: 1;
+  padding: 3rem 2rem; 
+  width: 100%;
 }
 
 footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 3rem;
-  background-color: #eeeeee;
-  grid-area: footer;
+  padding: 1.5rem;
+  width: 100%;
 }
 </style>

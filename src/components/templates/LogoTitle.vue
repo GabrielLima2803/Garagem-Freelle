@@ -2,7 +2,6 @@
 <template>
   <div class="logo">
     <img src="@/assets/logo.png" alt="Garagem Freelle Logo" />
-    <h2>Garagem Freelle</h2>
   </div>
 </template>
 
@@ -15,15 +14,9 @@
 }
 
 .logo img {
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
   object-fit: cover;
-}
-
-.logo h2 {
-  font-family: 'Belleza', sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
 </style>
